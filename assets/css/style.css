@@ -1,107 +1,151 @@
-/* --- Steins;Gate Visual Theme Variables --- */
+/* --- Importación de Fuentes --- */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,700;1,700&display=swap');
+
 :root {
-  /* Core Colors */
-  --sg-neon-green: #00ff00;      /* Terminal text, hacking interface */
-  --sg-nixie-amber: #ff7900;     /* Divergence meter glow, warning text */
-  --sg-bg-dark: #0a0a0c;         /* Deep, slightly blue-tinted lab black */
-  --sg-terminal-dark: #121214;   /* Card backgrounds, terminal windows */
-  --sg-text-muted: #888899;      /* Secondary text, labels */
+  /* --- TUS 2 IMÁGENES DE FONDO A PROBAR --- */
+  /* Coloca tus imágenes en la carpeta assets/images/ y nombra los archivos aquí */
+  --bg-image-1: url('/assets/images/fondo-lab-1.jpg');
+  --bg-image-2: url('/assets/images/fondo-lab-2.jpg');
   
-  /* Fonts */
-  --sg-font-mono: 'Courier New', Courier, 'OCR-A Extended', monospace;
+  /* Selector de fondo activo: cambia entre var(--bg-image-1) y var(--bg-image-2) para probar */
+  --sg-active-bg: var(--bg-image-1);
+
+  /* --- TEXTURA PARA LOS TÍTULOS (Opción B) --- */
+  /* Una imagen de ruido, desgaste o grunge que se recortará dentro de las letras */
+  --title-texture: url('/assets/images/textura-grunge.png');
+
+  /* Tonos grises y acentos */
+  --sg-text-main: #d0d0d9;
+  --sg-text-muted: #888896;
+  --sg-nixie-amber: #ff7900;
+  --sg-terminal-dark: #121216;
+  
+  /* Tipografías */
+  --sg-font-title: 'EB Garamond', Garamond, serif;
+  --sg-font-body: 'Ariendezze', monospace, sans-serif;
 }
 
-/* --- Base Page Setup --- */
+/* --- Base Page Setup con Imagen de Fondo --- */
 body {
-  background-color: var(--sg-bg-dark);
-  color: var(--sg-neon-green);
-  font-family: var(--sg-font-mono);
+  background-image: var(--sg-active-bg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #0a0a0c; /* Color de respaldo por si carga lento la imagen */
+  
+  color: var(--sg-text-main);
+  font-family: var(--sg-font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
   margin: 0;
   padding: 20px;
-  /* Subtle scanline overlay effect */
-  background-image: linear-gradient(
-    rgba(18, 18, 20, 0) 50%, 
-    rgba(0, 0, 0, 0.25) 50%
-  );
-  background-size: 100% 4px;
   min-height: 100vh;
 }
 
-/* Container Principal */
+/* Contenedor Principal con un fondo semitransparente para que la lectura sea perfecta sobre tu imagen */
 .main-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  background-color: rgba(10, 10, 12, 0.85); /* Oscurece la imagen detrás de la caja para legibilidad */
+  border: 1px solid var(--sg-text-muted);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 /* Header & Nav */
 header {
-  border-bottom: 1px solid var(--sg-neon-green);
+  border-bottom: 1px dashed var(--sg-text-muted);
   padding-bottom: 15px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 nav a {
-  margin-right: 15px;
+  margin: 0 10px;
   font-weight: bold;
 }
 
-/* --- Terminal / Divergence Elements --- */
+/* --- Elementos de Terminal --- */
 .terminal-window {
   background-color: var(--sg-terminal-dark);
-  border: 1px solid var(--sg-neon-green);
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
-  padding: 20px;
+  border: 1px solid var(--sg-text-muted);
+  padding: 25px;
   border-radius: 4px;
   margin: 20px 0;
 }
 
-/* Divergence Meter Styling */
+/* Medidor de Divergencia (Ámbar) */
 .divergence-meter {
   font-size: 2.2rem;
   color: var(--sg-nixie-amber);
-  text-shadow: 0 0 10px rgba(255, 121, 0, 0.7), 0 0 20px rgba(255, 121, 0, 0.5);
+  text-shadow: 0 0 10px rgba(255, 121, 0, 0.6), 0 0 20px rgba(255, 121, 0, 0.4);
   letter-spacing: 4px;
   text-align: center;
   margin: 15px 0;
+  font-family: monospace;
   font-weight: bold;
 }
 
-/* --- Headings & Links --- */
-h1, h2, h3 {
-  color: var(--sg-neon-green);
+/* --- OPCIÓN B: Títulos con Textura de Imagen dentro del Texto --- */
+h1, h2, h3, h4 {
+  font-family: var(--sg-font-title);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  letter-spacing: 1.5px;
+  
+  /* Magia de la Opción B: Inserta la textura dentro de las letras */
+  background-image: var(--title-texture);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  /* Respaldo por si algún navegador antiguo no soporta el clip de imagen */
+  color: var(--sg-text-main);
+  
+  /* Sombra sutil para destacar el texto sobre el fondo */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9));
 }
 
+h1 {
+  font-size: 2.3rem;
+}
+
+h2 {
+  border-bottom: 1px solid var(--sg-text-muted);
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+
+/* --- Enlaces --- */
 a {
   color: var(--sg-nixie-amber);
   text-decoration: none;
   border-bottom: 1px dashed var(--sg-nixie-amber);
+  transition: all 0.2s ease;
 }
 
 a:hover {
-  color: var(--sg-neon-green);
-  border-bottom: 1px solid var(--sg-neon-green);
-  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  color: var(--sg-text-main);
+  border-bottom: 1px solid var(--sg-text-main);
 }
 
 .muted-text {
   color: var(--sg-text-muted);
 }
 
-/* --- Estilos para Código y Capturas de Pantalla --- */
+/* --- Bloques de Código --- */
 pre, code {
-  background-color: var(--sg-terminal-dark);
-  color: var(--sg-neon-green);
-  border: 1px solid var(--sg-text-muted);
-  border-radius: 3px;
-  font-family: var(--sg-font-mono);
+  background-color: #070709;
+  color: #d0d0d9;
+  border: 1px solid #2a2a33;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 code {
   padding: 2px 6px;
+  font-size: 0.9em;
+  color: var(--sg-nixie-amber);
 }
 
 pre {
@@ -114,10 +158,11 @@ pre code {
   padding: 0;
 }
 
+/* --- Imágenes dentro de Write-ups --- */
 img {
   max-width: 100%;
   height: auto;
-  border: 1px solid var(--sg-neon-green);
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.15);
+  border: 1px solid var(--sg-text-muted);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 15px 0;
 }
