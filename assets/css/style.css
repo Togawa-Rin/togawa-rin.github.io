@@ -1,18 +1,26 @@
 /* --- Importación de Fuentes --- */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,700;1,700&display=swap');
 
+/* --- Declaración de la fuente personalizada Ariendezze --- */
+@font-face {
+  font-family: 'Ariendezze';
+  src: url('../fonts/ariendezze.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /* --- TUS 2 IMÁGENES DE FONDO A PROBAR --- */
   /* Coloca tus imágenes en la carpeta assets/images/ y nombra los archivos aquí */
-  --bg-image-1: url('/assets/images/fondo-lab1.png');
-  --bg-image-2: url('/assets/images/fondo-lab2.png');
+  --bg-image-1: url('../assets/images/fondo-lab1.png');
+  --bg-image-2: url('../assets/images/fondo-lab2.png');
   
   /* Selector de fondo activo: cambia entre var(--bg-image-1) y var(--bg-image-2) para probar */
   --sg-active-bg: var(--bg-image-1);
 
   /* --- TEXTURA PARA LOS TÍTULOS (Opción B) --- */
   /* Una imagen de ruido, desgaste o grunge que se recortará dentro de las letras */
-  --title-texture: url('/assets/images/textura-grunge.png');
+  --title-texture: url('../assets/images/makise.jpg');
 
   /* Tonos grises y acentos */
   --sg-text-main: #d0d0d9;
