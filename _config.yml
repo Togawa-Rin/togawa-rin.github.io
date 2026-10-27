@@ -1,0 +1,11 @@
+title: "Prueba de estilos 1"
+description: "Write-ups, reportes y herramientas de ciberseguridad, portafolio en general"
+url: "https://togawa-rin.github.io"
+
+# Desactiva temas por defecto para usar nuestro propio layout y CSS
+theme: null
+
+# Permite procesar Markdown con sintaxis extendida
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
