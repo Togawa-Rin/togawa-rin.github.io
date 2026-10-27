@@ -4,8 +4,8 @@
 :root {
   /* --- TUS 2 IMÁGENES DE FONDO A PROBAR --- */
   /* Coloca tus imágenes en la carpeta assets/images/ y nombra los archivos aquí */
-  --bg-image-1: url('/assets/images/fondo-lab-1.jpg');
-  --bg-image-2: url('/assets/images/fondo-lab-2.jpg');
+  --bg-image-1: url('/assets/images/fondo-lab1.png');
+  --bg-image-2: url('/assets/images/fondo-lab2.png');
   
   /* Selector de fondo activo: cambia entre var(--bg-image-1) y var(--bg-image-2) para probar */
   --sg-active-bg: var(--bg-image-1);
