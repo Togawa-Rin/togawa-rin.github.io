@@ -1,0 +1,123 @@
+/* --- Steins;Gate Visual Theme Variables --- */
+:root {
+  /* Core Colors */
+  --sg-neon-green: #00ff00;      /* Terminal text, hacking interface */
+  --sg-nixie-amber: #ff7900;     /* Divergence meter glow, warning text */
+  --sg-bg-dark: #0a0a0c;         /* Deep, slightly blue-tinted lab black */
+  --sg-terminal-dark: #121214;   /* Card backgrounds, terminal windows */
+  --sg-text-muted: #888899;      /* Secondary text, labels */
+  
+  /* Fonts */
+  --sg-font-mono: 'Courier New', Courier, 'OCR-A Extended', monospace;
+}
+
+/* --- Base Page Setup --- */
+body {
+  background-color: var(--sg-bg-dark);
+  color: var(--sg-neon-green);
+  font-family: var(--sg-font-mono);
+  margin: 0;
+  padding: 20px;
+  /* Subtle scanline overlay effect */
+  background-image: linear-gradient(
+    rgba(18, 18, 20, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  min-height: 100vh;
+}
+
+/* Container Principal */
+.main-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header & Nav */
+header {
+  border-bottom: 1px solid var(--sg-neon-green);
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+nav a {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+/* --- Terminal / Divergence Elements --- */
+.terminal-window {
+  background-color: var(--sg-terminal-dark);
+  border: 1px solid var(--sg-neon-green);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+/* Divergence Meter Styling */
+.divergence-meter {
+  font-size: 2.2rem;
+  color: var(--sg-nixie-amber);
+  text-shadow: 0 0 10px rgba(255, 121, 0, 0.7), 0 0 20px rgba(255, 121, 0, 0.5);
+  letter-spacing: 4px;
+  text-align: center;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+/* --- Headings & Links --- */
+h1, h2, h3 {
+  color: var(--sg-neon-green);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+a {
+  color: var(--sg-nixie-amber);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--sg-nixie-amber);
+}
+
+a:hover {
+  color: var(--sg-neon-green);
+  border-bottom: 1px solid var(--sg-neon-green);
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.muted-text {
+  color: var(--sg-text-muted);
+}
+
+/* --- Estilos para Código y Capturas de Pantalla --- */
+pre, code {
+  background-color: var(--sg-terminal-dark);
+  color: var(--sg-neon-green);
+  border: 1px solid var(--sg-text-muted);
+  border-radius: 3px;
+  font-family: var(--sg-font-mono);
+}
+
+code {
+  padding: 2px 6px;
+}
+
+pre {
+  padding: 15px;
+  overflow-x: auto;
+}
+
+pre code {
+  border: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--sg-neon-green);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.15);
+  margin: 15px 0;
+}
