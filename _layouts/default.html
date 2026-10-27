@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Future Gadget Lab</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+  <div class="main-container">
+    <header>
+      <div class="divergence-meter">1.048596%</div>
+      <nav>
+        <a href="{{ '/' | relative_url }}">[MAIN]</a>
+        <a href="{{ '/notas/' | relative_url }}">[NOTAS]</a>
+        <a href="{{ '/reportes/' | relative_url }}">[REPORTES]</a>
+        <a href="{{ '/herramientas/' | relative_url }}">[HERRAMIENTAS]</a>
+        <a href="{{ '/labs/' | relative_url }}">[LABS]</a>
+      </nav>
+    </header>
+
+    <main class="terminal-window">
+      {{ content }}
+    </main>
+
+    <footer style="margin-top: 40px; text-align: center;" class="muted-text">
+      <p>El Psy Kongroo &copy; {{ 'now' | date: "%Y" }}</p>
+    </footer>
+  </div>
+
+</body>
+</html>
