@@ -12,15 +12,15 @@
 :root {
   /* --- TUS 2 IMÁGENES DE FONDO A PROBAR --- */
   /* Coloca tus imágenes en la carpeta assets/images/ y nombra los archivos aquí */
-  --bg-image-1: url('../assets/images/fondo-lab1.png');
-  --bg-image-2: url('../assets/images/fondo-lab2.png');
+  --bg-image-1: url('../images/fondo-lab1.png');
+  --bg-image-2: url('../images/fondo-lab2.png');
   
   /* Selector de fondo activo: cambia entre var(--bg-image-1) y var(--bg-image-2) para probar */
   --sg-active-bg: var(--bg-image-1);
 
   /* --- TEXTURA PARA LOS TÍTULOS (Opción B) --- */
   /* Una imagen de ruido, desgaste o grunge que se recortará dentro de las letras */
-  --title-texture: url('../assets/images/makise.jpg');
+  --title-texture: url('../images/makise.jpg');
 
   /* Tonos grises y acentos */
   --sg-text-main: #d0d0d9;
