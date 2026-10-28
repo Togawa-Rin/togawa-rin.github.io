@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Home Terminal
+title: Togawa's Space
 ---
 
-# SYSTEM ONLINE: FUTURE GADGET LABORATORY
+# Togawa's Space
 
 Bienvenido al registro de investigaciones, análisis de vulnerabilidades y herramientas de ciberseguridad.
 
